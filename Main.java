@@ -47,9 +47,12 @@ public class Main {
         System.out.println("How much money will you play with on this hand?");
         double handValue = input.nextDouble();
         if (handValue>b.getMoney()){
-            System.out.println("Your hand value has automatically been set to the money you have.");
+            System.out.println("Your hand value has automatically been set to the money you have: $" + b.getMoney());
             handValue = b.getMoney();
             b.withdrawMoney(b.getMoney());
+        }
+        else if (handValue<=b.getMoney()){
+            b.withdrawMoney(handValue);
         }
     }
 }
