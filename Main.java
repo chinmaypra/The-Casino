@@ -22,12 +22,20 @@ public class Main {
                 System.out.println("Thanks for playing! Here are your final stats:");
                 calcStats(stats, bankAccount);
             }
+            else if(choice==0){
+                calcStats(stats, bankAccount);
+            }
         }
 
 
     }
 
-    public void calcStats(Stats s, BankAccount b){
+    public static void calcStats(Stats s, BankAccount b){
         System.out.println("Total Wins: " + s.getWins());
+        System.out.println("Total Losses: " + s.getLosses());
+        System.out.println("Win Percentage %" + s.calcWinPercentage());
+        System.out.println("Money Entered With: $" + b.getInitialMoney());
+        System.out.println("Money Left With: $" + b.getMoney());
+        System.out.println("Profit: $" + b.calcProfit());
     }
 }

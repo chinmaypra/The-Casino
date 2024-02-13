@@ -20,4 +20,8 @@ public class BankAccount {
     public void withdrawMoney(double m){
         money-=m;
     }
+
+    public double calcProfit(){
+        return money-INITIAL_MONEY;
+    }
 }
