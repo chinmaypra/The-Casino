@@ -5,6 +5,7 @@ public class Main {
         //Make instantiations
         Scanner input = new Scanner(System.in);
         Stats stats = new Stats();
+        Deck deck = new Deck();
         int choice = 0;
         
         System.out.println("How much money are you brining to the casino?");
