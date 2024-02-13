@@ -25,6 +25,9 @@ public class Main {
             else if(choice==0){
                 calcStats(stats, bankAccount);
             }
+            else if (choice==1){
+                blackjack(stats, bankAccount);
+            }
         }
 
 
@@ -37,5 +40,16 @@ public class Main {
         System.out.println("Money Entered With: $" + b.getInitialMoney());
         System.out.println("Money Left With: $" + b.getMoney());
         System.out.println("Profit: $" + b.calcProfit());
+    }
+
+    public static void blackjack(Stats s, BankAccount b){
+        Scanner input = new Scanner(System.in);
+        System.out.println("How much money will you play with on this hand?");
+        double handValue = input.nextDouble();
+        if (handValue>b.getMoney()){
+            System.out.println("Your hand value has automatically been set to the money you have.");
+            handValue = b.getMoney();
+            b.withdrawMoney(b.getMoney());
+        }
     }
 }
