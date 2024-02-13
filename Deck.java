@@ -39,8 +39,24 @@ public class Deck {
             System.out.println();
         }
     }
-    
-    public void getCard(){
-        int num = (int)(Math.random()*52)+1;
+
+    public String getCard(){
+        String returnedCard = "";
+        int row = 0;
+        int col = 0;
+        int cont = -1;
+        while(cont==-1){
+            int num = (int)(Math.random()*52);
+            row = (num/4);
+            col  =num%4;
+            if(deck[row][col]==null){
+                cont = -1;
+            }
+            else{
+                returnedCard = deck[row][col];
+            }
+        }
+        deck[row][col] = null;
+        return returnedCard;
     }
 }

@@ -6,6 +6,8 @@ public class Main {
         Scanner input = new Scanner(System.in);
         Stats stats = new Stats();
         Deck deck = new Deck();
+        System.out.println(deck.getCard());
+        deck.printDeck();
         int choice = 0;
         
         System.out.println("How much money are you brining to the casino?");
